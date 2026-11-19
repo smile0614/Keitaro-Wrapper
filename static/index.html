@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keitaro Wrapper</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header><a href="/">Keitaro Wrapper</a></header>
+  <main>
+    <div class="grid">
+      <section class="card">
+        <h2>New campaign</h2>
+        <form id="create-form">
+          <div class="field">
+            <label for="name">Name</label>
+            <div class="prefix-input"><span id="prefix"></span><input id="name" required placeholder="campaign1"></div>
+          </div>
+          <div class="field">
+            <label for="geo">Geo</label>
+            <div>
+              <input id="geo" required placeholder="MX, AU, RO">
+              <div class="hint">Two-letter country codes, separated by commas</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Offer</label>
+            <div id="offer-picker"></div>
+          </div>
+          <div class="field">
+            <label for="domain">Domain</label>
+            <select id="domain" required></select>
+          </div>
+          <div class="field">
+            <label for="group">Group</label>
+            <select id="group" required></select>
+          </div>
+          <div class="field">
+            <label for="source">Source</label>
+            <select id="source" required></select>
+          </div>
+          <button class="primary" type="submit" id="create-button" data-icon="plus">Create</button>
+          <div id="create-message" class="message"></div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Open an existing campaign</h2>
+        <form id="import-form">
+          <div class="field">
+            <label for="keitaro-id">Keitaro ID</label>
+            <input id="keitaro-id" type="number" min="1" required placeholder="209494">
+          </div>
+          <button type="submit" id="import-button" data-icon="download">Load from Keitaro</button>
+          <div id="import-message" class="message"></div>
+        </form>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>Campaigns</h2>
+      <table>
+        <thead><tr><th>Name</th><th>Keitaro ID</th><th></th></tr></thead>
+        <tbody id="campaigns"></tbody>
+      </table>
+    </section>
+  </main>
+  <script src="/static/common.js"></script>
+  <script src="/static/index.js"></script>
+</body>
+</html>

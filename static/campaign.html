@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campaign streams</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header><a href="/">Keitaro Wrapper</a></header>
+  <main>
+    <p><a href="/">Campaigns</a> / <span id="crumb">…</span></p>
+    <h1 id="title">Loading…</h1>
+    <div class="toolbar spread">
+      <div class="toolbar">
+        <button id="fetch-button" data-icon="download">Fetch streams from KT</button>
+        <a id="keitaro-link" target="_blank" rel="noopener"><button type="button" data-icon="external">View in KT</button></a>
+      </div>
+      <button id="all-offers-button" data-icon="list">Show all offers</button>
+    </div>
+    <div id="page-message" class="message"></div>
+    <section id="all-offers" class="card" hidden>
+      <div class="toolbar spread">
+        <h2>All offers in Keitaro</h2>
+        <input id="all-offers-filter" class="filter" placeholder="Filter by name or ID">
+      </div>
+      <table>
+        <thead><tr><th>ID</th><th>Offer</th><th>Countries</th><th>In this campaign</th></tr></thead>
+        <tbody id="all-offers-body"></tbody>
+      </table>
+    </section>
+    <p id="stats-note" class="hint"></p>
+    <div id="streams"></div>
+  </main>
+  <script src="/static/common.js"></script>
+  <script src="/static/campaign.js"></script>
+</body>
+</html>
